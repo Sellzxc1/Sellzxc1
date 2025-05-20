@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="Logo.png" type="image
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SELLZXC1</title>
+    <style>
+        :root {
+            --primary: #0af;
+            --secondary: #f0a;
+            --dark: #111;
+            --darker: #0a0a0a;
+            --light: #eee;
+            --code: #0f0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace;
+        }
+        
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        header {
+            background-color: var(--darker);
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 3px solid var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "// SELLZXC1 // SELLZXC1 // SELLZXC1 // SELLZXC1 // SELLZXC1 //";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            color: rgba(0, 170, 255, 0.1);
+            font-size: 1.5rem;
+            white-space: nowrap;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 span {
+            color: var(--secondary);
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin: 2rem 0 1rem;
+            color: var(--primary);
+            border-left: 5px solid var(--primary);
+            padding-left: 1rem;
+        }
+        
+        nav {
+            background-color: var(--darker);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #333;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+            white-space: nowrap;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+            background-color: rgba(0, 170, 255, 0.1);
+        }
+        
+        nav a::after {
+            content: ">";
+            position: absolute;
+            right: -10px;
+            opacity: 0;
+            transition: all 0.3s ease;
+            color: var(--primary);
+        }
+        
+        nav a:hover::after {
+            right: -15px;
+            opacity: 1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .service-card {
+            background-color: var(--darker);
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary);
+        }
+        
+        .service-card::before {
+            content: "{}";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 3rem;
+            color: rgba(0, 170, 255, 0.1);
+        }
+        
+        .service-card h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .service-card p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .about {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            position: relative;
+        }
+        
+        .code-block {
+            background-color: var(--darker);
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            font-family: 'Courier New', monospace;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .code-block::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+        }
+        
+        .code-line {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .code-comment {
+            color: #666;
+        }
+        
+        .code-keyword {
+            color: var(--primary);
+        }
+        
+        .code-string {
+            color: var(--secondary);
+        }
+        
+        .code-number {
+            color: var(--code);
+        }
+        
+        footer {
+            background-color: var(--darker);
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 3px solid var(--primary);
+            margin-top: 3rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        
+        .social-link {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .social-link:hover {
+            color: var(--primary);
+        }
+        
+        .social-icon {
+            font-size: 1.5rem;
+        }
+        
+        .glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px rgba(0, 170, 255, 0.5);
+            }
+            to {
+                text-shadow: 0 0 10px rgba(0, 170, 255, 0.8), 0 0 20px rgba(0, 170, 255, 0.6);
+            }
+        }
+        
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        /* Стили для проектов */
+        .projects-section {
+            background-color: var(--darker);
+            padding: 3rem 0;
+        }
+
+        .projects-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary);
+        }
+
+        .project-card a {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            height: 100%;
+        }
+
+        .project-image {
+            height: 200px;
+            background-color: #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-description {
+            color: #aaa;
+            margin-bottom: 1rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background-color: rgba(0, 170, 255, 0.1);
+            color: var(--primary);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        /* Стили для доната */
+        .donate-section {
+            background-color: var(--darker);
+            padding: 3rem 0;
+        }
+
+        .donate-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            border: 1px solid var(--primary);
+            text-align: center;
+        }
+
+        .donate-btn {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin: 1rem 0;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .donate-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 170, 255, 0.4);
+        }
+
+        /* Mobile menu styles */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about {
+                flex-direction: column;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .donate-container {
+                padding: 1.5rem;
+            }
+
+            /* Mobile menu adjustments */
+            nav ul {
+                display: none;
+                flex-direction: column;
+                gap: 0.5rem;
+                width: 100%;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                margin: 0 auto;
+            }
+
+            nav {
+                padding: 0.5rem;
+            }
+
+            nav a {
+                display: block;
+                text-align: center;
+                padding: 0.5rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="matrix-bg" id="matrix"></div>
+    
+    <header>
+        <h1>SELL<span>ZXC</span>1</h1>
+        <p class="glow">Программист & Дизайнер</p>
+    </header>
+    
+    <nav>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i> Меню
+        </button>
+        <ul id="navMenu">
+            <li><a href="#services">Услуги</a></li>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#donate">Поддержка</a></li>
+            <li><a href="#projects">Проекты</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section id="services">
+            <h2>// Наши услуги</h2>
+            
+            <div class="services">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Веб-разработка</h3>
+                    <p>Создание современных и интерактивных веб-сайтов с использованием передовых технологий.</p>
+                    <div class="code-block">
+                        <span class="code-line"><span class="code-keyword">const</span> <span class="code-string">website</span> = <span class="code-keyword">new</span> <span class="code-string">Project</span>({</span>
+                        <span class="code-line">  <span class="code-string">tech</span>: [<span class="code-string">'HTML5'</span>, <span class="code-string">'CSS3'</span>, <span class="code-string">'JavaScript'</span>, <span class="code-string">'Node.js'</span>],</span>
+                        <span class="code-line">  <span class="code-string">responsive</span>: <span class="code-keyword">true</span>,</span>
+                        <span class="code-line">  <span class="code-string">quality</span>: <span class="code-number">100</span></span>
+                        <span class="code-line">});</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>UI/UX Дизайн</h3>
+                    <p>Создание интуитивно понятных и эстетичных интерфейсов для ваших продуктов.</p>
+                    <div class="code-block">
+                        <span class="code-line"><span class="code-comment">/* Красивый дизайн - это */</span></span>
+                        <span class="code-line"><span class="code-string">design</span>.<span class="code-keyword">set</span>({</span>
+                        <span class="code-line">  <span class="code-string">colors</span>: <span class="code-string">'perfect'</span>,</span>
+                        <span class="code-line">  <span class="code-string">typography</span>: <span class="code-string">'balanced'</span>,</span>
+                        <span class="code-line">  <span class="code-string">userExperience</span>: <span class="code-string">'intuitive'</span></span>
+                        <span class="code-line">});</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Backend разработка</h3>
+                    <p>Надежные и масштабируемые серверные решения для вашего проекта.</p>
+                    <div class="code-block">
+                        <span class="code-line"><span class="code-keyword">class</span> <span class="code-string">Backend</span> {</span>
+                        <span class="code-line">  <span class="code-keyword">constructor</span>() {</span>
+                        <span class="code-line">    <span class="code-keyword">this</span>.<span class="code-string">security</span> = <span class="code-string">'high'</span>;</span>
+                        <span class="code-line">    <span class="code-keyword">this</span>.<span class="code-string">performance</span> = <span class="code-string">'optimized'</span>;</span>
+                        <span class="code-line">    <span class="code-keyword">this</span>.<span class="code-string">scalability</span> = <span class="code-string">'unlimited'</span>;</span>
+                        <span class="code-line">  }</span>
+                        <span class="code-line">}</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="about">
+            <h2>// О нас</h2>
+            
+            <div class="about">
+                <div class="about-text">
+                    <p>SELLZXC1 - это профессиональный программист и дизайнер, специализирующийся на создании современных веб-решений.</p>
+                    
+                    <div class="code-block">
+                        <span class="code-line"><span class="code-keyword">const</span> <span class="code-string">sellzxc1</span> = {</span>
+                        <span class="code-line">  <span class="code-string">name</span>: <span class="code-string">'SELLZXC1'</span>,</span>
+                        <span class="code-line">  <span class="code-string">skills</span>: [<span class="code-string">'JavaScript'</span>, <span class="code-string">'HTML/CSS'</span>, <span class="code-string">'UI/UX Design'</span>, <span class="code-string">'Node.js'</span>,<span class="code-string">'python'</span>, <span class="code-string">'C#'</span>],</span>
+                        <span class="code-line">  <span class="code-string">experience</span>: <span class="code-number">?</span>+ <span class="code-string">' years'</span>,</span>
+                        <span class="code-line">  <span class="code-string">projectsCompleted</span>: <span class="code-number">??</span>+,</span>
+                        <span class="code-line">  <span class="code-string">passion</span>: <span class="code-string">'Creating amazing digital experiences'</span></span>
+                        <span class="code-line">};</span>
+                    </div>
+                    
+                    <p>Мы сочетаем техническое мастерство с художественным видением, чтобы создавать продукты, которые не только работают безупречно, но и выглядят потрясающе.</p>
+                </div>
+                
+                <div class="about-image">
+                    <div class="code-block" style="position: relative; height: 300px; display: flex; justify-content: center; align-items: center;">
+                        <div style="text-align: center;">
+                            <i class="fas fa-desktop" style="font-size: 5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                            <i class="fas fa-palette" style="font-size: 5rem; color: var(--secondary);"></i>
+                            <p style="margin-top: 1rem;">Технологии + Дизайн = Совершенство</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция доната -->
+        <section id="donate" class="donate-section">
+            <div class="container">
+                <h2>// Поддержать проект</h2>
+                
+                <div class="donate-container">
+                    <h3>Ваша поддержка помогает развивать проект</h3>
+                    <div class="code-block">
+                        <span class="code-line"><span class="code-comment">// Каждое пожертвование мотивирует на новые проекты</span></span>
+                        <span class="code-line"><span class="code-keyword">if</span> (<span class="code-string">you</span>.<span class="code-keyword">like</span>(<span class="code-string">project</span>)) {</span>
+                        <span class="code-line">  <span class="code-string">donate</span>(<span class="code-number">amount</span>).<span class="code-keyword">then</span>(<span class="code-string">'Спасибо!'</span>);</span>
+                        <span class="code-line">}</span>
+                    </div>
+                    <a href="https://yoomoney.ru/fundraise/1AA48QOOB2G.250517" class="donate-btn" target="_blank">
+                        <i class="fas fa-heart"></i> Поддержать проект
+                    </a>
+                    <p>Спасибо за вашу поддержку! ❤️</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция проектов -->
+        <section id="projects" class="projects-section">
+            <div class="projects-container">
+                <h2>// Наши проекты</h2>
+                <p>Посмотрите наши последние работы и проекты, которые мы реализовали для клиентов.</p>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <a href="https://example.com/project1" target="_blank">
+                            <div class="project-image">
+                                <img src="project1.jpg" alt="Project 1">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">Движок??</h3>
+                                <p class="project-description">???????</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">yaml</span>
+                                    <span class="tech-tag">pythion</span>
+                                    <span class="tech-tag">????</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="project-card">
+                        <a href="https://example.com/project2" target="_blank">
+                            <div class="project-image">
+                                <img src="project1.jpg" alt="Project 2">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">WEB???</h3>
+                                <p class="project-description">?????????</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">HTML5</span>
+                                    <span class="tech-tag">CSS3</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="project-card">
+                        <a href="https://example.com/project3" target="_blank">
+                            <div class="project-image">
+                                <img src="project1.jpg" alt="Project 3">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">???????????</h3>
+                                <p class="project-description">??????????????????????????</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">?????????</span>
+                                    <span class="tech-tag">?????</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="project-card">
+                        <a href="https://example.com/project4" target="_blank">
+                            <div class="project-image">
+                                <img src="project1.jpg" alt="Project 4">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">???????</h3>
+                                <p class="project-description">???????????????????????</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">????</span>
+                                    <span class="tech-tag">????</span>
+                                    <span class="tech-tag">????</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer id="contact">
+        <h2>SELL<span>ZXC</span>1</h2>
+        <p>Программист & Дизайнер</p>
+        
+        <div class="social-links">
+            <a href="https://t.me/Sellzxc1LIVE" class="social-link" target="_blank">
+                <i class="fab fa-telegram social-icon"></i>
+                <span>Telegram</span>
+            </a>
+        </div>
+        
+        <p style="margin-top: 2rem; font-size: 0.9rem; color: #666;">
+            &copy; 2025 SELLZXC1. Все права защищены.
+        </p>
+    </footer>
+    
+    <script>
+        // Matrix background effect
+        const matrix = document.getElementById('matrix');
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        matrix.appendChild(canvas);
+        
+        function resizeCanvas() {
+            canvas.width = matrix.clientWidth;
+            canvas.height = matrix.clientHeight;
+        }
+        
+        resizeCanvas();
+        
+        const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
+        const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const nums = '0123456789';
+        const symbols = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
+        
+        const alphabet = katakana + latin + nums + symbols;
+        
+        const fontSize = 16;
+        let columns = Math.floor(canvas.width / fontSize);
+        
+        const rainDrops = Array(columns).fill(1);
+        
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.fillStyle = '#0af';
+            ctx.font = `${fontSize}px monospace`;
+            
+            for (let i = 0; i < rainDrops.length; i++) {
+                const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+                ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+                
+                if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    rainDrops[i] = 0;
+                }
+                rainDrops[i]++;
+            }
+        }
+        
+        const matrixInterval = setInterval(drawMatrix, 30);
+        
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+            columns = Math.floor(canvas.width / fontSize);
+            rainDrops.length = columns;
+            rainDrops.fill(1);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu after click
+                    if (window.innerWidth <= 768) {
+                        navMenu.classList.remove('show');
+                    }
+                }
+            });
+        });
+        
+        // Add active class to current section in navigation
+        const sections = document.querySelectorAll('section');
+        const navItems = document.querySelectorAll('nav a');
+        
+        function updateActiveNavItem() {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href').includes(current)) {
+                    item.classList.add('active');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', updateActiveNavItem);
+        updateActiveNavItem();
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('nav') && window.innerWidth <= 768) {
+                navMenu.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
